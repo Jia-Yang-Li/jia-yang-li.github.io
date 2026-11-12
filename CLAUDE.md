@@ -24,7 +24,7 @@ When a field is added to a data file, add it to `.pages.yml` too. Pages CMS rewr
 
 Papers under review show only "Under review", never the venue. A paper at a double-blind venue stays off the site until it is accepted or public on arXiv.
 
-Keep the phone number, age and other personal details from the Chinese CV in the parent folder off the site.
+Keep the owner's phone number, age and other personal details off the site. The LaTeX CV the site was first filled from is a separate project in `../Resume`; its Chinese version contains such details.
 
 ## Pages and languages
 
@@ -54,6 +54,6 @@ git archive FETCH_HEAD | tar -x -C "$LOCALAPPDATA/jia-yang-li-preview"
 python -m http.server 4000 --bind 127.0.0.1 --directory "$LOCALAPPDATA/jia-yang-li-preview"
 ```
 
-The `site-preview` entry in `../.claude/launch.json` starts the same server.
+The `site-preview` entry in `.claude/launch.json` (git-ignored) starts the same server.
 
 A push to `main` runs `.github/workflows/deploy.yml`, which builds and publishes to the `gh-pages` branch that GitHub Pages serves. Push design changes to `main` only after the owner has approved the preview. Check the Actions run and the live site after each push.
