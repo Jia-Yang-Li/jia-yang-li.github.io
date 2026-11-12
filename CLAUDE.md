@@ -16,7 +16,7 @@ All page content is in `_data/`, with one field per language (`*_en`, `*_zh`):
 
 - `profile.yml` — name, photo, subtitle, biography, contact links.
 - `publications.yml` — the publication list. `bin/build_bib.py` turns it into `_bibliography/papers.bib` during the build; that file is generated and git-ignored.
-- `news.yml` — news items for the home page. The news section is hidden while the list is empty.
+- `news.yml` — news items for the home page, shown by month. The news section and its menu link are hidden while the list is empty.
 - `cv_content.yml` — education, experience, projects, skills.
 - `i18n.yml` — interface text per language (section headings, the language switch label).
 
@@ -28,12 +28,12 @@ Keep the phone number, age and other personal details from the Chinese CV in the
 
 ## Pages and languages
 
-English pages are at `/`, `/publications/`, `/cv/`; Chinese pages at `/zh/`, `/zh/publications/`, `/zh/cv/`. Each page in `_pages/` sets `lang: en` or `lang: zh`. A Chinese page's URL is the English one prefixed with `/zh`; the header relies on this to link the two.
+English pages are at `/` and `/cv/`; Chinese pages at `/zh/` and `/zh/cv/`. The home page holds the biography, research-interest tags, news and the full publication list; the menu links to its `#news` and `#publications` sections. Each page in `_pages/` sets `lang: en` or `lang: zh`. A Chinese page's URL is the English one prefixed with `/zh`; the header relies on this to link the two.
 
 Local overrides of the theme:
 
 - `_includes/header.liquid` — menu limited to the current language, plus the language switch.
-- `_layouts/home.liquid` — home page rendered from `profile.yml` and `news.yml`.
+- `_layouts/home.liquid` — home page rendered from `profile.yml`, `news.yml` and the generated bibliography.
 - `_layouts/cv_bilingual.liquid` and `_includes/cv_entry.liquid` — CV page rendered from `cv_content.yml`.
 
 Everything else (layouts, includes, Sass, Liquid tags) comes from the `al_folio_*` gems pinned in `Gemfile`. `Gemfile` and the `plugins:` list in `_config.yml` must agree. A feature that is switched off renders nothing and gives no error. Theme documentation is in `docs/`; the gem sources are at github.com/al-org-dev.

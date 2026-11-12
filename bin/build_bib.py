@@ -99,8 +99,6 @@ def entry(item, index, used):
     for name, source in (("html", "link"), ("code", "code")):
         if text(item.get(source)):
             fields.append((name, text(item.get(source))))
-    if item.get("selected") is True:
-        fields.append(("selected", "true"))
 
     entry_type = "inproceedings" if kind == "conference" else "article"
     key = make_key(authors, year, title, used)

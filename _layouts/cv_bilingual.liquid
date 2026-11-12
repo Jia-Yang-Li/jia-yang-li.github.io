@@ -13,6 +13,11 @@ layout: default
   .cv .skill-item {
     padding: 0.5rem 0;
   }
+  .cv .section-icon {
+    margin-right: 0.5rem;
+    color: var(--global-theme-color);
+    font-size: 0.8em;
+  }
   .cv .list-group-item {
     list-style: none;
   }
@@ -33,7 +38,7 @@ layout: default
     <div class="cv">
       {% if cv[summary_key] and cv[summary_key] != '' %}
         <div class="card mt-3 p-3">
-          <h3 class="card-title font-weight-medium">{{ t.summary }}</h3>
+          <h3 class="card-title font-weight-medium"><i class="fa-solid fa-user section-icon"></i>{{ t.summary }}</h3>
           <p>{{ cv[summary_key] }}</p>
         </div>
       {% endif %}
@@ -41,7 +46,7 @@ layout: default
       {% assign education_count = cv.education | size %}
       {% if education_count > 0 %}
         <div class="card mt-3 p-3">
-          <h3 class="card-title font-weight-medium">{{ t.education }}</h3>
+          <h3 class="card-title font-weight-medium"><i class="fa-solid fa-graduation-cap section-icon"></i>{{ t.education }}</h3>
           <ul class="card-text font-weight-light list-group list-group-flush">
             {% for item in cv.education %}
               {% if lang == 'zh' %}
@@ -58,7 +63,7 @@ layout: default
       {% assign experience_count = cv.experience | size %}
       {% if experience_count > 0 %}
         <div class="card mt-3 p-3">
-          <h3 class="card-title font-weight-medium">{{ t.experience }}</h3>
+          <h3 class="card-title font-weight-medium"><i class="fa-solid fa-briefcase section-icon"></i>{{ t.experience }}</h3>
           <ul class="card-text font-weight-light list-group list-group-flush">
             {% for item in cv.experience %}
               {% if lang == 'zh' %}
@@ -75,7 +80,7 @@ layout: default
       {% assign projects_count = cv.projects | size %}
       {% if projects_count > 0 %}
         <div class="card mt-3 p-3">
-          <h3 class="card-title font-weight-medium">{{ t.projects }}</h3>
+          <h3 class="card-title font-weight-medium"><i class="fa-solid fa-diagram-project section-icon"></i>{{ t.projects }}</h3>
           <ul class="card-text font-weight-light list-group list-group-flush">
             {% for item in cv.projects %}
               {% if lang == 'zh' %}
@@ -92,7 +97,7 @@ layout: default
       {% assign skills_count = cv.skills | size %}
       {% if skills_count > 0 %}
         <div class="card mt-3 p-3">
-          <h3 class="card-title font-weight-medium">{{ t.skills }}</h3>
+          <h3 class="card-title font-weight-medium"><i class="fa-solid fa-screwdriver-wrench section-icon"></i>{{ t.skills }}</h3>
           <div class="card-text font-weight-light">
             {% for item in cv.skills %}
               <div class="skill-item">

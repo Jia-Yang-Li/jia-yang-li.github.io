@@ -2,8 +2,9 @@
 layout: default
 ---
 {%- comment -%}
-  Home page in either language. All text comes from _data/profile.yml and
-  _data/news.yml; the page's `lang` front matter picks the language.
+  Home page in either language: biography, research interests, news and the
+  full publication list. Text comes from _data/profile.yml and _data/news.yml;
+  the page's `lang` front matter picks the language.
 {%- endcomment -%}
 {%- assign lang = page.lang | default: 'en' -%}
 {%- assign t = site.data.i18n[lang] -%}
@@ -11,18 +12,12 @@ layout: default
 {%- if lang == 'zh' -%}
   {%- assign subtitle = me.subtitle_zh -%}
   {%- assign affiliation = me.affiliation_zh -%}
-  {%- assign location = me.location_zh -%}
   {%- assign bio = me.bio_zh -%}
-  {%- assign contact_note = me.contact_note_zh -%}
-  {%- assign publications_url = '/zh/publications/' -%}
   {%- assign date_format = '%Y 年 %-m 月' -%}
 {%- else -%}
   {%- assign subtitle = me.subtitle_en -%}
   {%- assign affiliation = me.affiliation_en -%}
-  {%- assign location = me.location_en -%}
   {%- assign bio = me.bio_en -%}
-  {%- assign contact_note = me.contact_note_en -%}
-  {%- assign publications_url = '/publications/' -%}
   {%- assign date_format = '%b %Y' -%}
 {%- endif -%}
 <style>
@@ -32,22 +27,54 @@ layout: default
     max-width: 160px;
     margin: 0 1rem 0.5rem 0;
   }
-  .profile.float-left .more-info {
-    font-size: 0.8rem;
-  }
-  .profile.float-left .more-info p {
-    display: block;
-  }
-  /* The theme's monospace face has no Chinese glyphs. */
-  html[lang='zh'] .profile .more-info {
-    font-family: inherit;
-  }
   @media (min-width: 576px) {
     .profile.float-left {
       width: 20%;
       max-width: none;
       margin: 0 1.5rem 0.5rem 0;
     }
+  }
+  .profile figure {
+    margin-bottom: 0.5rem;
+  }
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.9rem;
+    font-size: 1.3rem;
+  }
+  .profile-links a {
+    color: var(--global-text-color);
+  }
+  .profile-links a:hover {
+    color: var(--global-theme-color);
+  }
+  .home-interests {
+    margin: 0.5rem 0 0;
+  }
+  .home-interests .interest-tag {
+    display: inline-block;
+    margin: 0 0.4rem 0.4rem 0;
+    padding: 0.1rem 0.7rem;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 999px;
+    color: var(--global-theme-color);
+    font-size: 0.85rem;
+  }
+  .home-section {
+    margin-top: 2rem;
+    scroll-margin-top: 5rem;
+  }
+  .section-icon {
+    margin-right: 0.5rem;
+    color: var(--global-theme-color);
+    font-size: 0.8em;
+  }
+  .home-news th {
+    width: 7.5rem;
+    font-weight: 500;
+    white-space: nowrap;
   }
 </style>
 
@@ -82,20 +109,49 @@ layout: default
         {% capture sizes %}(min-width: {{ site.max_width }}) 180px, (min-width: 576px) 20vw, 36vw{% endcapture %}
         {% include figure.liquid loading="eager" path=photo_path class="img-fluid z-depth-1 rounded" sizes=sizes alt=full_name cache_bust=true %}
       {% endif %}
-      <div class="more-info">
-        {% if affiliation and affiliation != '' %}<p>{{ affiliation }}</p>{% endif %}
-        {% if location and location != '' %}<p>{{ location }}</p>{% endif %}
+      <div class="profile-links">
+        {% if me.email and me.email != '' %}
+          <a href="mailto:{{ me.email }}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        {% endif %}
+        {% if me.google_scholar_url and me.google_scholar_url != '' %}
+          <a href="{{ me.google_scholar_url }}" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        {% endif %}
+        {% if me.orcid_id and me.orcid_id != '' %}
+          <a href="https://orcid.org/{{ me.orcid_id }}" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+        {% endif %}
+        {% if me.github_username and me.github_username != '' %}
+          <a href="https://github.com/{{ me.github_username }}" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        {% endif %}
+        {% if me.linkedin_username and me.linkedin_username != '' %}
+          <a href="https://www.linkedin.com/in/{{ me.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        {% endif %}
       </div>
     </div>
 
-    <div class="clearfix">{{ bio | markdownify }}</div>
+    <div class="clearfix">
+      {{ bio | markdownify }}
+
+      {% assign interests_count = me.interests | size %}
+      {% if interests_count > 0 %}
+        <p class="home-interests">
+          {% for item in me.interests %}
+            {% if lang == 'zh' %}
+              {% assign interest = item.name_zh | default: item.name_en %}
+            {% else %}
+              {% assign interest = item.name_en | default: item.name_zh %}
+            {% endif %}
+            <span class="interest-tag">{{ interest }}</span>
+          {% endfor %}
+        </p>
+      {% endif %}
+    </div>
 
     <!-- News -->
     {% assign news_count = site.data.news.items | size %}
     {% if news_count > 0 %}
-      <h2>{{ t.news }}</h2>
-      <div class="news">
-        <div class="table-responsive" {% if news_count > 5 %}style="max-height: 60vw"{% endif %}>
+      <h2 class="home-section" id="news"><i class="fa-solid fa-bullhorn section-icon"></i>{{ t.news }}</h2>
+      <div class="news home-news">
+        <div class="table-responsive" {% if news_count > 6 %}style="max-height: 16rem"{% endif %}>
           <table class="table table-sm table-borderless">
             {% assign news_items = site.data.news.items | sort: 'date' | reverse %}
             {% for item in news_items %}
@@ -105,7 +161,7 @@ layout: default
                 {% assign news_text = item.text_en | default: item.text_zh %}
               {% endif %}
               <tr>
-                <th scope="row" style="width: 20%">{{ item.date | date: date_format }}</th>
+                <th scope="row">{{ item.date | date: date_format }}</th>
                 <td>{{ news_text | markdownify | remove: '<p>' | remove: '</p>' }}</td>
               </tr>
             {% endfor %}
@@ -114,32 +170,8 @@ layout: default
       </div>
     {% endif %}
 
-    <!-- Selected papers -->
-    <h2>
-      <a href="{{ publications_url | relative_url }}" style="color: inherit">{{ t.selected_publications }}</a>
-    </h2>
-    {% include selected_papers.liquid %}
-
-    <!-- Contact -->
-    <div class="social">
-      <div class="contact-icons">
-        {% if me.email and me.email != '' %}
-          <a href="mailto:{{ me.email }}" title="Email"><i class="fa-solid fa-envelope"></i></a>
-        {% endif %}
-        {% if me.google_scholar_url and me.google_scholar_url != '' %}
-          <a href="{{ me.google_scholar_url }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-        {% endif %}
-        {% if me.orcid_id and me.orcid_id != '' %}
-          <a href="https://orcid.org/{{ me.orcid_id }}" title="ORCID"><i class="ai ai-orcid"></i></a>
-        {% endif %}
-        {% if me.github_username and me.github_username != '' %}
-          <a href="https://github.com/{{ me.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        {% endif %}
-        {% if me.linkedin_username and me.linkedin_username != '' %}
-          <a href="https://www.linkedin.com/in/{{ me.linkedin_username }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        {% endif %}
-      </div>
-      <div class="contact-note">{{ contact_note }}</div>
-    </div>
+    <!-- Publications -->
+    <h2 class="home-section" id="publications"><i class="fa-solid fa-book-open section-icon"></i>{{ t.publications }}</h2>
+    <div class="publications">{% bibliography %}</div>
   </article>
 </div>

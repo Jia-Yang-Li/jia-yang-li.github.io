@@ -4,7 +4,7 @@ en:
   switch_label: 中文
   comma: ", "
   news: news
-  selected_publications: selected publications
+  publications: publications
   summary: Summary
   education: Education
   experience: Experience
@@ -15,7 +15,7 @@ zh:
   switch_label: EN
   comma: "，"
   news: 动态
-  selected_publications: 代表论文
+  publications: 论文
   summary: 简介
   education: 教育背景
   experience: 工作经历

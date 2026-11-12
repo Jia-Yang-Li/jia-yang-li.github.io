@@ -46,12 +46,6 @@ content:
       - name: affiliation_url
         label: 单位网址
         type: string
-      - name: location_en
-        label: 所在地（英文）
-        type: string
-      - name: location_zh
-        label: 所在地（中文）
-        type: string
       - name: bio_en
         label: 个人简介（英文）
         description: 首页正文。段落之间空一行。
@@ -65,6 +59,17 @@ content:
         options:
           format: markdown
           media: false
+      - name: interests
+        label: 研究方向标签
+        description: 显示在首页简介下方的小标签，建议 3 到 5 个
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name_zh}"
+        fields:
+          - { name: name_en, label: 英文, type: string, required: true }
+          - { name: name_zh, label: 中文, type: string }
       - name: email
         label: 邮箱
         type: string
@@ -83,12 +88,6 @@ content:
       - name: orcid_id
         label: ORCID
         description: 形如 0000-0000-0000-0000；留空则不显示图标
-        type: string
-      - name: contact_note_en
-        label: 联系方式下方的说明（英文）
-        type: string
-      - name: contact_note_zh
-        label: 联系方式下方的说明（中文）
         type: string
 
   - name: publications
@@ -164,10 +163,6 @@ content:
           - name: code
             label: 代码链接
             type: string
-          - name: selected
-            label: 在首页“代表论文”中显示
-            type: boolean
-            default: false
 
   - name: news
     label: 动态
@@ -177,7 +172,7 @@ content:
     fields:
       - name: items
         label: 动态列表
-        description: 首页按日期从新到旧显示。列表为空时首页不显示“动态”栏。
+        description: 首页按日期从新到旧显示，只显示到月份。列表为空时首页不显示“动态”栏。
         type: object
         list:
           collapsible:
@@ -196,7 +191,7 @@ content:
             required: true
           - name: text_zh
             label: 内容（中文）
-            description: 留空时中文页面显示英文内容
+            description: 留空时中文页面显示英文内容。可以用 [文字](网址) 加链接
             type: text
 
   - name: cv

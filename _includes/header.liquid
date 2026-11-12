@@ -1,9 +1,9 @@
 {%- comment -%}
   Local override of the al_folio_core header. It differs from the theme's in
-  three ways: the menu lists only pages in the current page's language, the
-  brand and "about" links point to that language's home page, and a link
-  switches to the same page in the other language. Dropdown menus are not
-  supported.
+  four ways: the menu lists only pages in the current page's language, the
+  brand and "about" links point to that language's home page, the menu links
+  to the news and publications sections of the home page, and a link switches
+  to the same page in the other language. Dropdown menus are not supported.
 {%- endcomment -%}
 {%- assign lang = page.lang | default: 'en' -%}
 {%- assign t = site.data.i18n[lang] -%}
@@ -68,6 +68,17 @@
             </a>
           </li>
 
+          <!-- Sections of the home page -->
+          {% assign news_count = site.data.news.items | size %}
+          {% if news_count > 0 %}
+            <li class="nav-item">
+              <a class="nav-link" href="{{ t.home_url | relative_url }}#news">{{ t.news }}</a>
+            </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ t.home_url | relative_url }}#publications">{{ t.publications }}</a>
+          </li>
+
           <!-- Other pages in this language -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
@@ -87,7 +98,7 @@
           <!-- Language switch -->
           <li class="nav-item">
             <a class="nav-link" href="{{ alt_url | relative_url }}" lang="{{ alt_lang }}" hreflang="{{ alt_lang }}">
-              {{- t.switch_label -}}
+              <i class="fa-solid fa-language"></i> {{ t.switch_label -}}
             </a>
           </li>
 
