@@ -3,10 +3,18 @@
 # repository, which rebuilds and republishes the site.
 
 media:
-  input: assets/img
-  output: /assets/img
-  categories: [image]
-  rename: safe
+  - name: images
+    label: 图片
+    input: assets/img
+    output: /assets/img
+    categories: [image]
+    rename: safe
+  - name: previews
+    label: 论文配图
+    input: assets/img/publication_preview
+    output: /assets/img/publication_preview
+    categories: [image]
+    rename: safe
 
 settings:
   commit:
@@ -30,6 +38,8 @@ content:
         label: 头像
         description: 建议使用清晰的竖版照片
         type: image
+        options:
+          media: images
       - name: subtitle_en
         label: 身份（英文）
         description: 显示在姓名下方，例如 PhD candidate in AI security and privacy
@@ -163,6 +173,12 @@ content:
           - name: code
             label: 代码链接
             type: string
+          - name: image
+            label: 配图
+            description: 显示在论文左侧的小图，例如方法框架图或关键结果图。建议横版，宽度不小于 600 像素；可留空
+            type: image
+            options:
+              media: previews
 
   - name: news
     label: 动态

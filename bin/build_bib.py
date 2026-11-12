@@ -6,6 +6,7 @@ The theme renders publications from BibTeX, so the deploy and preview
 workflows run this script before the Jekyll build.
 """
 
+import posixpath
 import re
 import sys
 from pathlib import Path
@@ -17,6 +18,9 @@ SOURCE = ROOT / "_data" / "publications.yml"
 TARGET = ROOT / "_bibliography" / "papers.bib"
 
 STATUSES = {"published", "preprint", "under_review"}
+
+# The theme looks for publication images in this folder.
+PREVIEW_DIR = "/assets/img/publication_preview"
 
 
 def text(value):
@@ -99,6 +103,12 @@ def entry(item, index, used):
     for name, source in (("html", "link"), ("code", "code")):
         if text(item.get(source)):
             fields.append((name, text(item.get(source))))
+
+    image = text(item.get("image"))
+    if image:
+        if "://" not in image:
+            image = posixpath.relpath("/" + image.lstrip("/"), PREVIEW_DIR)
+        fields.append(("preview", image))
 
     entry_type = "inproceedings" if kind == "conference" else "article"
     key = make_key(authors, year, title, used)
