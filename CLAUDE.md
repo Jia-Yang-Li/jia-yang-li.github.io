@@ -1,24 +1,46 @@
 # Jiayang Li's personal website
 
-Academic homepage built on the al-folio v1.x Jekyll starter. The site is served from the repository root of `<username>.github.io`, so `baseurl` in `_config.yml` stays empty.
+Bilingual (English and Chinese) academic homepage built on the al-folio v1.x Jekyll starter. The site is served from the repository root of `jia-yang-li.github.io`, so `baseurl` in `_config.yml` stays empty.
+
+## Who edits what
+
+The owner edits content through Pages CMS (app.pagescms.org), which commits straight to `main` and so publishes. The forms are defined in `.pages.yml`. Design and structure changes are made here.
+
+Because the owner commits to `main` from the CMS, run `git pull` on `main` and merge it into `preview` before editing anything.
+
+`使用说明.md` is the owner's guide to the CMS. Update it when a form changes.
 
 ## Content
 
-- `_pages/about.md` — home page biography and which home page blocks are on.
-- `_bibliography/papers.bib` — publications. `selected = {true}` shows a paper on the home page. `abbr` values get their colour and link from `_data/venues.yml`.
-- `_data/cv.yml` — CV page, RenderCV format.
-- `_data/socials.yml` — email and social links.
-- `assets/img/prof_pic.jpg` — profile photo.
+All page content is in `_data/`, with one field per language (`*_en`, `*_zh`):
 
-Papers under review are `@article` entries with `journal = {Under review}` and no venue name. A paper submitted to a double-blind venue is left off the site until it is accepted or public on arXiv.
+- `profile.yml` — name, photo, subtitle, biography, contact links.
+- `publications.yml` — the publication list. `bin/build_bib.py` turns it into `_bibliography/papers.bib` during the build; that file is generated and git-ignored.
+- `news.yml` — news items for the home page. The news section is hidden while the list is empty.
+- `cv_content.yml` — education, experience, projects, skills.
+- `i18n.yml` — interface text per language (section headings, the language switch label).
+
+When a field is added to a data file, add it to `.pages.yml` too. Pages CMS rewrites a file from its form schema, so a key missing from the schema is dropped on the next save.
+
+Papers under review show only "Under review", never the venue. A paper at a double-blind venue stays off the site until it is accepted or public on arXiv.
 
 Keep the phone number, age and other personal details from the Chinese CV in the parent folder off the site.
 
-## Theme
+## Pages and languages
 
-Layouts, includes, Sass and Liquid tags live in the `al_folio_*` gems pinned in `Gemfile`. `Gemfile` and the `plugins:` list in `_config.yml` must agree. A feature that is switched off renders nothing and gives no error. Theme documentation is in `docs/`.
+English pages are at `/`, `/publications/`, `/cv/`; Chinese pages at `/zh/`, `/zh/publications/`, `/zh/cv/`. Each page in `_pages/` sets `lang: en` or `lang: zh`. A Chinese page's URL is the English one prefixed with `/zh`; the header relies on this to link the two.
 
-Sample content from the template was deleted (blog, projects, news, books, teaching, repositories). To bring a section back, copy the page and collection from upstream al-folio.
+Local overrides of the theme:
+
+- `_includes/header.liquid` — menu limited to the current language, plus the language switch.
+- `_layouts/home.liquid` — home page rendered from `profile.yml` and `news.yml`.
+- `_layouts/cv_bilingual.liquid` and `_includes/cv_entry.liquid` — CV page rendered from `cv_content.yml`.
+
+Everything else (layouts, includes, Sass, Liquid tags) comes from the `al_folio_*` gems pinned in `Gemfile`. `Gemfile` and the `plugins:` list in `_config.yml` must agree. A feature that is switched off renders nothing and gives no error. Theme documentation is in `docs/`; the gem sources are at github.com/al-org-dev.
+
+In Liquid, test for an empty value with `x and x != ''`. `x != blank` is true for an empty string here.
+
+The theme sets `float: left !important` on `.float-left`, so page-level CSS cannot turn the profile photo's float off.
 
 ## Build and deploy
 
@@ -28,13 +50,10 @@ Work on the `preview` branch. A push to `preview` runs `.github/workflows/previe
 
 ```bash
 git fetch origin preview-site
-rm -rf "$LOCALAPPDATA/jia-yang-li-preview" && mkdir -p "$LOCALAPPDATA/jia-yang-li-preview"
 git archive FETCH_HEAD | tar -x -C "$LOCALAPPDATA/jia-yang-li-preview"
 python -m http.server 4000 --bind 127.0.0.1 --directory "$LOCALAPPDATA/jia-yang-li-preview"
 ```
 
 The `site-preview` entry in `../.claude/launch.json` starts the same server.
 
-A push to `main` runs `.github/workflows/deploy.yml`, which builds and publishes to the `gh-pages` branch that GitHub Pages serves. Push to `main` only after the owner has approved the preview. Check the Actions run and the live site after each push.
-
-The theme sets `float: left !important` on `.float-left`, so page-level CSS cannot turn the profile photo's float off.
+A push to `main` runs `.github/workflows/deploy.yml`, which builds and publishes to the `gh-pages` branch that GitHub Pages serves. Push design changes to `main` only after the owner has approved the preview. Check the Actions run and the live site after each push.

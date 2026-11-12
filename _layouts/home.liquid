@@ -35,6 +35,13 @@ layout: default
   .profile.float-left .more-info {
     font-size: 0.8rem;
   }
+  .profile.float-left .more-info p {
+    display: block;
+  }
+  /* The theme's monospace face has no Chinese glyphs. */
+  html[lang='zh'] .profile .more-info {
+    font-family: inherit;
+  }
   @media (min-width: 576px) {
     .profile.float-left {
       width: 20%;
