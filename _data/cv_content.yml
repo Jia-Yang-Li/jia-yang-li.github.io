@@ -1,0 +1,88 @@
+summary_en: PhD candidate in AI security and privacy. My research focuses on security risks in fine-tuned language models and memory-augmented agents. I design and evaluate attacks and defences, verify the use of private training data, and audit whether machine unlearning removes the influence of targeted data.
+summary_zh: 人工智能安全与隐私方向博士生，研究聚焦微调语言模型与记忆增强智能体的安全风险。我设计并评估攻击与防御方法，验证私有训练数据的使用情况，并审计机器遗忘是否消除了目标数据的影响。
+education:
+  - period: 2023 – 2027
+    degree_en: PhD
+    degree_zh: 博士
+    institution_en: University of Technology Sydney
+    institution_zh: 悉尼科技大学
+    field_en: AI security and privacy
+    field_zh: 人工智能安全与数据隐私保护
+    location_en: Sydney, Australia
+    location_zh: 澳大利亚悉尼
+  - period: 2020 – 2023
+    degree_en: Master's degree
+    degree_zh: 硕士
+    institution_en: Hebei University of Technology
+    institution_zh: 河北工业大学
+    field_en: Computer Technology
+    field_zh: 计算机技术
+    location_en: Tianjin, China
+    location_zh: 天津
+  - period: 2015 – 2019
+    degree_en: Bachelor's degree
+    degree_zh: 学士
+    institution_en: Hebei University
+    institution_zh: 河北大学
+    field_en: Software Engineering
+    field_zh: 软件工程
+    location_en: Baoding, China
+    location_zh: 河北保定
+experience:
+  - period: 2025 – 2026
+    role_en: Tutor, System Security
+    role_zh: 助教，System Security（系统安全）课程
+    organisation_en: University of Technology Sydney
+    organisation_zh: 悉尼科技大学
+    location_en: Sydney, Australia
+    location_zh: 澳大利亚悉尼
+projects:
+  - period: "2022"
+    title_en: Dynamic spatiotemporal fusion learning for Alzheimer's disease diagnosis using multi-atlas fMRI
+    title_zh: 基于多图谱 fMRI 动态时空融合学习的阿尔茨海默病诊断
+    source_en: Hebei Province Postgraduate Innovation Funding Project
+    source_zh: 河北省研究生创新资助项目
+    description_en: Preprocessing and feature engineering for fMRI data; model training, ablation studies and robustness evaluation.
+    description_zh: fMRI 数据的预处理与特征工程，模型训练、消融实验与鲁棒性评估。
+  - period: "2022"
+    title_en: A data and model library for analysing urban management events
+    title_zh: 面向城市管理事件分析的数据与模型库
+    source_en: Collaboration with Beijing Institute of New Technology Applications
+    source_zh: 与北京新技术应用研究所合作
+    description_en: Cleaning, labelling and validating urban surveillance data; training and evaluating some of the models and developing functional modules.
+    description_zh: 城市监控数据的清洗标注与校验，部分模型的训练、评估和功能模块开发。
+  - period: "2021"
+    title_en: A large-scale video database and platform for structured object detection and analysis
+    title_zh: 大规模视频数据库与结构化目标检测分析平台
+    source_en: Collaboration with Beijing Institute of New Technology Applications
+    source_zh: 与北京新技术应用研究所合作
+    description_en: Preprocessing large-scale video data; integrating object detection models and evaluating their performance.
+    description_zh: 大规模视频数据的预处理，集成目标检测模型并开展性能评估。
+  - period: "2017"
+    title_en: Personalised news recommendation based on latent Dirichlet allocation
+    title_zh: 基于潜在狄利克雷分配（LDA）的个性化新闻推荐系统
+    source_en: Hebei Province Undergraduate Innovation Training Project
+    source_zh: 河北省大学生创新训练项目
+    description_en: Chinese text preprocessing and feature extraction; back-end development and integration testing.
+    description_zh: 中文文本预处理与特征提取，系统后端开发与联调测试。
+skills:
+  - name_en: AI security testing
+    name_zh: AI 安全测试
+    details_en: Prompt injection, jailbreaks, backdoors, training-data use verification, machine-unlearning audits
+    details_zh: 提示注入、越狱与后门测试，训练数据使用验证，机器遗忘审计
+  - name_en: LLM systems
+    name_zh: 大模型系统
+    details_en: LangChain, RAG, prompt engineering, Transformers (BERT, GPT), LoRA
+    details_zh: LangChain、RAG、提示词工程、Transformers（BERT、GPT）、LoRA
+  - name_en: Programming
+    name_zh: 编程
+    details_en: Python, C/C++, Java, SQL
+    details_zh: Python、C/C++、Java、SQL
+  - name_en: Machine learning
+    name_zh: 机器学习
+    details_en: PyTorch, TensorFlow, scikit-learn
+    details_zh: PyTorch、TensorFlow、scikit-learn
+  - name_en: Computer vision
+    name_zh: 计算机视觉
+    details_en: OpenCV, YOLO, CLIP, BLIP, SAM, ViT, diffusion models
+    details_zh: OpenCV、YOLO、CLIP、BLIP、SAM、ViT、扩散模型

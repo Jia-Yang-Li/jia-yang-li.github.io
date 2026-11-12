@@ -1,0 +1,272 @@
+# Pages CMS (https://app.pagescms.org) — the forms used to edit the site's content.
+# Every form writes one of the YAML files in _data/. Saving commits to the
+# repository, which rebuilds and republishes the site.
+
+media:
+  input: assets/img
+  output: /assets/img
+  categories: [image]
+  rename: safe
+
+settings:
+  commit:
+    templates:
+      create: "Add {path} (via Pages CMS)"
+      update: "Update {path} (via Pages CMS)"
+      delete: "Delete {path} (via Pages CMS)"
+
+content:
+  - name: profile
+    label: 个人信息与简介
+    type: file
+    path: _data/profile.yml
+    format: yaml
+    fields:
+      - name: name_zh
+        label: 中文姓名
+        type: string
+        required: true
+      - name: photo
+        label: 头像
+        description: 建议使用清晰的竖版照片
+        type: image
+      - name: subtitle_en
+        label: 身份（英文）
+        description: 显示在姓名下方，例如 PhD candidate in AI security and privacy
+        type: string
+      - name: subtitle_zh
+        label: 身份（中文）
+        type: string
+      - name: affiliation_en
+        label: 单位（英文）
+        type: string
+      - name: affiliation_zh
+        label: 单位（中文）
+        type: string
+      - name: affiliation_url
+        label: 单位网址
+        type: string
+      - name: location_en
+        label: 所在地（英文）
+        type: string
+      - name: location_zh
+        label: 所在地（中文）
+        type: string
+      - name: bio_en
+        label: 个人简介（英文）
+        description: 首页正文。段落之间空一行。
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: bio_zh
+        label: 个人简介（中文）
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+      - name: email
+        label: 邮箱
+        type: string
+      - name: google_scholar_url
+        label: Google Scholar 主页网址
+        description: 填完整网址；留空则不显示图标
+        type: string
+      - name: github_username
+        label: GitHub 用户名
+        description: 留空则不显示图标
+        type: string
+      - name: linkedin_username
+        label: LinkedIn 用户名
+        description: linkedin.com/in/ 后面的部分；留空则不显示图标
+        type: string
+      - name: orcid_id
+        label: ORCID
+        description: 形如 0000-0000-0000-0000；留空则不显示图标
+        type: string
+      - name: contact_note_en
+        label: 联系方式下方的说明（英文）
+        type: string
+      - name: contact_note_zh
+        label: 联系方式下方的说明（中文）
+        type: string
+
+  - name: publications
+    label: 论文
+    type: file
+    path: _data/publications.yml
+    format: yaml
+    fields:
+      - name: items
+        label: 论文列表
+        description: 同一年内按这里的先后顺序显示。拖动可调整顺序。
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{year} · {title}"
+        fields:
+          - name: title
+            label: 标题
+            type: string
+            required: true
+          - name: authors
+            label: 作者
+            description: 按顺序填写，用英文逗号分隔，例如 Jiayang Li, Tianqing Zhu, Wanlei Zhou
+            type: text
+            required: true
+          - name: status
+            label: 状态
+            type: select
+            default: published
+            options:
+              values:
+                - name: published
+                  label: 已发表 / 已录用
+                - name: preprint
+                  label: 预印本（arXiv）
+                - name: under_review
+                  label: 在审（网页只显示 Under review，不显示投稿期刊）
+          - name: type
+            label: 类型
+            type: select
+            default: journal
+            options:
+              values:
+                - name: journal
+                  label: 期刊
+                - name: conference
+                  label: 会议
+          - name: venue
+            label: 期刊或会议全称
+            description: 已发表的论文必填；在审论文留空
+            type: string
+          - name: abbr
+            label: 简称标签
+            description: 显示在论文左侧的彩色标签，例如 TIFS、USENIX Sec；可留空
+            type: string
+          - name: year
+            label: 年份
+            type: number
+            required: true
+          - name: doi
+            label: DOI
+            description: 只填编号，例如 10.1109/TIFS.2026.3744609
+            type: string
+          - name: arxiv
+            label: arXiv 编号
+            description: 只填编号，例如 2610.04985
+            type: string
+          - name: link
+            label: 论文网页链接
+            description: 没有 DOI 时可填，例如会议官网的论文页面
+            type: string
+          - name: code
+            label: 代码链接
+            type: string
+          - name: selected
+            label: 在首页“代表论文”中显示
+            type: boolean
+            default: false
+
+  - name: news
+    label: 动态
+    type: file
+    path: _data/news.yml
+    format: yaml
+    fields:
+      - name: items
+        label: 动态列表
+        description: 首页按日期从新到旧显示。列表为空时首页不显示“动态”栏。
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{date} · {text_zh}"
+        fields:
+          - name: date
+            label: 日期
+            type: date
+            required: true
+            options:
+              format: yyyy-MM-dd
+          - name: text_en
+            label: 内容（英文）
+            type: text
+            required: true
+          - name: text_zh
+            label: 内容（中文）
+            description: 留空时中文页面显示英文内容
+            type: text
+
+  - name: cv
+    label: 简历
+    type: file
+    path: _data/cv_content.yml
+    format: yaml
+    fields:
+      - name: summary_en
+        label: 简介（英文）
+        type: text
+      - name: summary_zh
+        label: 简介（中文）
+        type: text
+      - name: education
+        label: 教育背景
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{period} · {institution_zh}"
+        fields:
+          - { name: period, label: 起止时间, description: 例如 2023 – 2027, type: string, required: true }
+          - { name: degree_en, label: 学位（英文）, type: string }
+          - { name: degree_zh, label: 学位（中文）, type: string }
+          - { name: institution_en, label: 学校（英文）, type: string }
+          - { name: institution_zh, label: 学校（中文）, type: string }
+          - { name: field_en, label: 专业或方向（英文）, type: string }
+          - { name: field_zh, label: 专业或方向（中文）, type: string }
+          - { name: location_en, label: 地点（英文）, type: string }
+          - { name: location_zh, label: 地点（中文）, type: string }
+      - name: experience
+        label: 工作经历
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{period} · {role_zh}"
+        fields:
+          - { name: period, label: 起止时间, type: string, required: true }
+          - { name: role_en, label: 职位（英文）, type: string }
+          - { name: role_zh, label: 职位（中文）, type: string }
+          - { name: organisation_en, label: 单位（英文）, type: string }
+          - { name: organisation_zh, label: 单位（中文）, type: string }
+          - { name: location_en, label: 地点（英文）, type: string }
+          - { name: location_zh, label: 地点（中文）, type: string }
+      - name: projects
+        label: 项目经历
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{period} · {title_zh}"
+        fields:
+          - { name: period, label: 时间, type: string, required: true }
+          - { name: title_en, label: 项目名称（英文）, type: string }
+          - { name: title_zh, label: 项目名称（中文）, type: string }
+          - { name: source_en, label: 项目来源（英文）, type: string }
+          - { name: source_zh, label: 项目来源（中文）, type: string }
+          - { name: description_en, label: 我的工作（英文）, type: text }
+          - { name: description_zh, label: 我的工作（中文）, type: text }
+      - name: skills
+        label: 专业技能
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name_zh}"
+        fields:
+          - { name: name_en, label: 类别（英文）, type: string }
+          - { name: name_zh, label: 类别（中文）, type: string }
+          - { name: details_en, label: 具体内容（英文）, type: text }
+          - { name: details_zh, label: 具体内容（中文）, type: text }

@@ -5,11 +5,8 @@ title: publications
 description: Papers in reverse chronological order.
 nav: true
 nav_order: 1
+lang: en
 ---
-
-<!-- _pages/publications.md -->
-
-<!-- Bibsearch Feature -->
 
 {% include bib_search.liquid %}
 

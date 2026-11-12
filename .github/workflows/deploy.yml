@@ -91,6 +91,10 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Generate bibliography 📚
+        run: |
+          pip3 install pyyaml
+          python3 bin/build_bib.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick

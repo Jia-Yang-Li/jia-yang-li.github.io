@@ -22,3 +22,6 @@ __pycache__/
 
 # Local tooling
 .claude/
+
+# Generated from _data/publications.yml by bin/build_bib.py
+_bibliography/papers.bib

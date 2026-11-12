@@ -1,0 +1,138 @@
+---
+layout: default
+---
+{%- comment -%}
+  Home page in either language. All text comes from _data/profile.yml and
+  _data/news.yml; the page's `lang` front matter picks the language.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign me = site.data.profile -%}
+{%- if lang == 'zh' -%}
+  {%- assign subtitle = me.subtitle_zh -%}
+  {%- assign affiliation = me.affiliation_zh -%}
+  {%- assign location = me.location_zh -%}
+  {%- assign bio = me.bio_zh -%}
+  {%- assign contact_note = me.contact_note_zh -%}
+  {%- assign publications_url = '/zh/publications/' -%}
+  {%- assign date_format = '%Y 年 %-m 月' -%}
+{%- else -%}
+  {%- assign subtitle = me.subtitle_en -%}
+  {%- assign affiliation = me.affiliation_en -%}
+  {%- assign location = me.location_en -%}
+  {%- assign bio = me.bio_en -%}
+  {%- assign contact_note = me.contact_note_en -%}
+  {%- assign publications_url = '/publications/' -%}
+  {%- assign date_format = '%b %Y' -%}
+{%- endif -%}
+<style>
+  /* Smaller profile photo on the left, with the biography wrapping around it. */
+  .profile.float-left {
+    width: 36%;
+    max-width: 160px;
+    margin: 0 1rem 0.5rem 0;
+  }
+  .profile.float-left .more-info {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 576px) {
+    .profile.float-left {
+      width: 20%;
+      max-width: none;
+      margin: 0 1.5rem 0.5rem 0;
+    }
+  }
+</style>
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if lang == 'zh' %}
+        <span class="font-weight-bold">{{ me.name_zh }}</span>
+      {% else %}
+        <span class="font-weight-bold">{{ site.first_name }}</span>
+        {{ site.last_name }}
+      {% endif %}
+    </h1>
+    <p class="desc">
+      {{- subtitle -}}
+      {%- if affiliation and affiliation != '' -%}
+        {{- t.comma -}}
+        {%- if me.affiliation_url and me.affiliation_url != '' -%}
+          <a href="{{ me.affiliation_url }}">{{ affiliation }}</a>
+        {%- else -%}
+          {{- affiliation -}}
+        {%- endif -%}
+      {%- endif -%}
+    </p>
+  </header>
+
+  <article>
+    <div class="profile float-left">
+      {% if me.photo and me.photo != '' %}
+        {% assign photo_path = me.photo | remove_first: '/' %}
+        {% capture full_name %}{{ site.first_name }} {{ site.last_name }}{% endcapture %}
+        {% capture sizes %}(min-width: {{ site.max_width }}) 180px, (min-width: 576px) 20vw, 36vw{% endcapture %}
+        {% include figure.liquid loading="eager" path=photo_path class="img-fluid z-depth-1 rounded" sizes=sizes alt=full_name cache_bust=true %}
+      {% endif %}
+      <div class="more-info">
+        {% if affiliation and affiliation != '' %}<p>{{ affiliation }}</p>{% endif %}
+        {% if location and location != '' %}<p>{{ location }}</p>{% endif %}
+      </div>
+    </div>
+
+    <div class="clearfix">{{ bio | markdownify }}</div>
+
+    <!-- News -->
+    {% assign news_count = site.data.news.items | size %}
+    {% if news_count > 0 %}
+      <h2>{{ t.news }}</h2>
+      <div class="news">
+        <div class="table-responsive" {% if news_count > 5 %}style="max-height: 60vw"{% endif %}>
+          <table class="table table-sm table-borderless">
+            {% assign news_items = site.data.news.items | sort: 'date' | reverse %}
+            {% for item in news_items %}
+              {% if lang == 'zh' %}
+                {% assign news_text = item.text_zh | default: item.text_en %}
+              {% else %}
+                {% assign news_text = item.text_en | default: item.text_zh %}
+              {% endif %}
+              <tr>
+                <th scope="row" style="width: 20%">{{ item.date | date: date_format }}</th>
+                <td>{{ news_text | markdownify | remove: '<p>' | remove: '</p>' }}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    {% endif %}
+
+    <!-- Selected papers -->
+    <h2>
+      <a href="{{ publications_url | relative_url }}" style="color: inherit">{{ t.selected_publications }}</a>
+    </h2>
+    {% include selected_papers.liquid %}
+
+    <!-- Contact -->
+    <div class="social">
+      <div class="contact-icons">
+        {% if me.email and me.email != '' %}
+          <a href="mailto:{{ me.email }}" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        {% endif %}
+        {% if me.google_scholar_url and me.google_scholar_url != '' %}
+          <a href="{{ me.google_scholar_url }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+        {% endif %}
+        {% if me.orcid_id and me.orcid_id != '' %}
+          <a href="https://orcid.org/{{ me.orcid_id }}" title="ORCID"><i class="ai ai-orcid"></i></a>
+        {% endif %}
+        {% if me.github_username and me.github_username != '' %}
+          <a href="https://github.com/{{ me.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>
+        {% endif %}
+        {% if me.linkedin_username and me.linkedin_username != '' %}
+          <a href="https://www.linkedin.com/in/{{ me.linkedin_username }}" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        {% endif %}
+      </div>
+      <div class="contact-note">{{ contact_note }}</div>
+    </div>
+  </article>
+</div>

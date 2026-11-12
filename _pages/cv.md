@@ -1,11 +1,9 @@
 ---
-layout: cv
+layout: cv_bilingual
 permalink: /cv/
 title: CV
+description: Education, experience, projects and skills.
 nav: true
 nav_order: 2
-cv_format: rendercv # options: rendercv, jsonresume
-description: Education, experience, projects and skills.
-toc:
-  sidebar: left
+lang: en
 ---

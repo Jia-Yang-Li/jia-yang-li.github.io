@@ -1,0 +1,23 @@
+# Interface text for each language. Page content lives in the other data files.
+en:
+  home_url: /
+  switch_label: 中文
+  comma: ", "
+  news: news
+  selected_publications: selected publications
+  summary: Summary
+  education: Education
+  experience: Experience
+  projects: Projects
+  skills: Skills
+zh:
+  home_url: /zh/
+  switch_label: EN
+  comma: "，"
+  news: 动态
+  selected_publications: 代表论文
+  summary: 简介
+  education: 教育背景
+  experience: 工作经历
+  projects: 项目经历
+  skills: 专业技能

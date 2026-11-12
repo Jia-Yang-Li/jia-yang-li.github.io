@@ -1,0 +1,103 @@
+---
+layout: default
+---
+{%- comment -%}
+  CV page in either language, rendered from _data/cv_content.yml. The markup
+  follows the theme's own CV cards so the theme's styles apply.
+{%- endcomment -%}
+{%- assign lang = page.lang | default: 'en' -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign cv = site.data.cv_content -%}
+{%- assign summary_key = 'summary_' | append: lang -%}
+<style>
+  .cv .skill-item {
+    padding: 0.5rem 0;
+  }
+</style>
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    <div class="cv">
+      {% if cv[summary_key] and cv[summary_key] != '' %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.summary }}</h3>
+          <p>{{ cv[summary_key] }}</p>
+        </div>
+      {% endif %}
+
+      {% assign education_count = cv.education | size %}
+      {% if education_count > 0 %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.education }}</h3>
+          <ul class="card-text font-weight-light list-group list-group-flush">
+            {% for item in cv.education %}
+              {% if lang == 'zh' %}
+                {% assign line1 = item.degree_zh %}{% assign line2 = item.institution_zh %}{% assign line3 = item.field_zh %}{% assign place = item.location_zh %}
+              {% else %}
+                {% assign line1 = item.degree_en %}{% assign line2 = item.institution_en %}{% assign line3 = item.field_en %}{% assign place = item.location_en %}
+              {% endif %}
+              {% include cv_entry.liquid period=item.period place=place line1=line1 line2=line2 line3=line3 %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% assign experience_count = cv.experience | size %}
+      {% if experience_count > 0 %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.experience }}</h3>
+          <ul class="card-text font-weight-light list-group list-group-flush">
+            {% for item in cv.experience %}
+              {% if lang == 'zh' %}
+                {% assign line1 = item.role_zh %}{% assign line2 = item.organisation_zh %}{% assign place = item.location_zh %}
+              {% else %}
+                {% assign line1 = item.role_en %}{% assign line2 = item.organisation_en %}{% assign place = item.location_en %}
+              {% endif %}
+              {% include cv_entry.liquid period=item.period place=place line1=line1 line2=line2 %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% assign projects_count = cv.projects | size %}
+      {% if projects_count > 0 %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.projects }}</h3>
+          <ul class="card-text font-weight-light list-group list-group-flush">
+            {% for item in cv.projects %}
+              {% if lang == 'zh' %}
+                {% assign line1 = item.title_zh %}{% assign line3 = item.source_zh %}{% assign body = item.description_zh %}
+              {% else %}
+                {% assign line1 = item.title_en %}{% assign line3 = item.source_en %}{% assign body = item.description_en %}
+              {% endif %}
+              {% include cv_entry.liquid period=item.period line1=line1 line3=line3 body=body %}
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% assign skills_count = cv.skills | size %}
+      {% if skills_count > 0 %}
+        <div class="card mt-3 p-3">
+          <h3 class="card-title font-weight-medium">{{ t.skills }}</h3>
+          <div class="card-text font-weight-light">
+            {% for item in cv.skills %}
+              <div class="skill-item">
+                {% if lang == 'zh' %}
+                  <strong>{{ item.name_zh }}：</strong>{{ item.details_zh }}
+                {% else %}
+                  <strong>{{ item.name_en }}:</strong> {{ item.details_en }}
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </article>
+</div>

@@ -1,0 +1,41 @@
+{%- comment -%}
+  One row of a CV card: a date badge and optional place on the left; on the
+  right a bold first line, then optional plain, italic and body lines.
+  Parameters: period, place, line1, line2, line3, body.
+{%- endcomment -%}
+<li class="list-group-item">
+  <div class="row">
+    <div class="col-xs-2 col-sm-2 col-md-2 text-center date-column">
+      <table class="table-cv">
+        <tbody>
+          <tr>
+            <td>
+              <span class="badge font-weight-bold danger-color-dark text-uppercase align-middle" style="min-width: 75px">
+                {{- include.period -}}
+              </span>
+            </td>
+          </tr>
+          {% if include.place and include.place != '' %}
+            <tr>
+              <td>
+                <p class="location"><i class="fa-solid fa-location-dot iconlocation"></i> {{ include.place }}</p>
+              </td>
+            </tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-xs-10 col-sm-10 col-md-10 mt-2 mt-md-0">
+      <h6 class="title font-weight-bold ml-1 ml-md-4">{{ include.line1 }}</h6>
+      {% if include.line2 and include.line2 != '' %}
+        <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem">{{ include.line2 }}</h6>
+      {% endif %}
+      {% if include.line3 and include.line3 != '' %}
+        <h6 class="ml-1 ml-md-4" style="font-size: 0.95rem; font-style: italic">{{ include.line3 }}</h6>
+      {% endif %}
+      {% if include.body and include.body != '' %}
+        <p class="ml-1 ml-md-4 mb-0">{{ include.body }}</p>
+      {% endif %}
+    </div>
+  </div>
+</li>
