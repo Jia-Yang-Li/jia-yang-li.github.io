@@ -22,4 +22,19 @@ Sample content from the template was deleted (blog, projects, news, books, teach
 
 ## Build and deploy
 
-There is no local Ruby or Docker on the Windows machine, so the site is not built locally. A push to `main` runs `.github/workflows/deploy.yml`, which builds with Jekyll and publishes to the `gh-pages` branch. Check the Actions run and the live site after each push.
+There is no local Ruby or Docker on the Windows machine, so the site is not built locally.
+
+Work on the `preview` branch. A push to `preview` runs `.github/workflows/preview.yml`, which builds the site into the `preview-site` branch and publishes nothing. To view it locally:
+
+```bash
+git fetch origin preview-site
+rm -rf "$LOCALAPPDATA/jia-yang-li-preview" && mkdir -p "$LOCALAPPDATA/jia-yang-li-preview"
+git archive FETCH_HEAD | tar -x -C "$LOCALAPPDATA/jia-yang-li-preview"
+python -m http.server 4000 --bind 127.0.0.1 --directory "$LOCALAPPDATA/jia-yang-li-preview"
+```
+
+The `site-preview` entry in `../.claude/launch.json` starts the same server.
+
+A push to `main` runs `.github/workflows/deploy.yml`, which builds and publishes to the `gh-pages` branch that GitHub Pages serves. Push to `main` only after the owner has approved the preview. Check the Actions run and the live site after each push.
+
+The theme sets `float: left !important` on `.float-left`, so page-level CSS cannot turn the profile photo's float off.

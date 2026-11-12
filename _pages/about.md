@@ -26,20 +26,18 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-<!-- Smaller profile photo on the left. On phones it sits above the text without floating. -->
+<!-- Smaller profile photo on the left, with the biography wrapping around it. -->
 <style>
   .profile.float-left {
-    float: none;
-    width: 40%;
+    width: 36%;
     max-width: 160px;
-    margin: 0 0 1rem 0;
+    margin: 0 1rem 0.5rem 0;
   }
   .profile.float-left .more-info {
     font-size: 0.8rem;
   }
   @media (min-width: 576px) {
     .profile.float-left {
-      float: left;
       width: 20%;
       max-width: none;
       margin: 0 1.5rem 0.5rem 0;
