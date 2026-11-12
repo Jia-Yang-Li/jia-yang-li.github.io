@@ -10,7 +10,7 @@ items:
     arxiv: ""
     link: ""
     code: ""
-    image: /assets/img/publication_preview/test-figure.png
+    image: ""
   - title: "Agent Teaches Agent: Autonomous Teacher Agents Persistently Hijack Memory-Augmented Embodied Agents"
     authors: Jiayang Li, Tianqing Zhu, Dayong Ye, Huan Huo, Wanlei Zhou
     status: under_review

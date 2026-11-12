@@ -15,7 +15,7 @@ Because the owner commits to `main` from the CMS, run `git pull` on `main` and m
 All page content is in `_data/`, with one field per language (`*_en`, `*_zh`):
 
 - `profile.yml` — name, photo, subtitle, biography, contact links.
-- `publications.yml` — the publication list. `bin/build_bib.py` turns it into `_bibliography/papers.bib` during the build; that file is generated and git-ignored.
+- `publications.yml` — the publication list. `bin/build_bib.py` turns it into `_bibliography/papers.bib` during the build; that file is generated and git-ignored. A publication's `image` (stored under `assets/img/publication_preview/`) becomes the theme's `preview` thumbnail.
 - `news.yml` — news items for the home page, shown by month. The news section and its menu link are hidden while the list is empty.
 - `cv_content.yml` — education, experience, projects, skills.
 - `i18n.yml` — interface text per language (section headings, the language switch label).
