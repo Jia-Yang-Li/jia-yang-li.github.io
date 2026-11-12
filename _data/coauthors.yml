@@ -1,0 +1,6 @@
+# Links for co-authors shown in the publication list.
+# Keys are lower-cased last names without accents. Example:
+#
+# "zhu":
+#   - firstname: ["Tianqing", "T."]
+#     url: https://example.org/

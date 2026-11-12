@@ -1,0 +1,15 @@
+"TIFS":
+  url: https://signalprocessingsociety.org/publications-resources/ieee-transactions-information-forensics-and-security
+  color: "#00629b"
+
+"USENIX Sec":
+  url: https://www.usenix.org/conference/usenixsecurity25
+  color: "#9f0000"
+
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"Front. Neurosci.":
+  url: https://www.frontiersin.org/journals/neuroscience
+  color: "#555555"
