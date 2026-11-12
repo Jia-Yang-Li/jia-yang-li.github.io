@@ -5,7 +5,7 @@ permalink: /
 subtitle: PhD candidate in AI security and privacy, <a href='https://www.uts.edu.au/'>University of Technology Sydney</a>
 
 profile:
-  align: right
+  align: left
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
@@ -25,6 +25,27 @@ latest_posts:
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
+
+<!-- Smaller profile photo on the left. On phones it sits above the text without floating. -->
+<style>
+  .profile.float-left {
+    float: none;
+    width: 40%;
+    max-width: 160px;
+    margin: 0 0 1rem 0;
+  }
+  .profile.float-left .more-info {
+    font-size: 0.8rem;
+  }
+  @media (min-width: 576px) {
+    .profile.float-left {
+      float: left;
+      width: 20%;
+      max-width: none;
+      margin: 0 1.5rem 0.5rem 0;
+    }
+  }
+</style>
 
 I am a PhD candidate in AI security and privacy at the University of Technology Sydney, advised by Prof. Tianqing Zhu and Prof. Wanlei Zhou. I expect to graduate in 2027.
 

@@ -1,0 +1,54 @@
+name: Build preview
+
+# Builds the site from the `preview` branch and stores the result in the
+# `preview-site` branch. Nothing here publishes to GitHub Pages: Pages serves
+# `gh-pages`, which only deploy.yml writes, on pushes to `main`.
+
+on:
+  push:
+    branches:
+      - preview
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: "pip"
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install JS deps
+        run: npm ci
+      - name: Install and Build
+        run: |
+          sudo apt-get update && sudo apt-get install -y imagemagick
+          pip3 install --upgrade nbconvert
+          export JEKYLL_ENV=production
+          bundle exec jekyll build
+      - name: Purge unused CSS
+        run: |
+          npm install -g purgecss
+          purgecss -c purgecss.config.js
+      - name: Store the built site
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: preview-site
+          single-commit: true
