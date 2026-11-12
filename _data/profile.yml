@@ -5,13 +5,24 @@ subtitle_zh: 人工智能安全与隐私方向博士生
 affiliation_en: University of Technology Sydney
 affiliation_zh: 悉尼科技大学
 affiliation_url: https://www.uts.edu.au/
-bio_en: |
-  I am a PhD candidate in AI security and privacy at the University of Technology Sydney, advised by Prof. Tianqing Zhu and Prof. Wanlei Zhou. I expect to graduate in 2027.
+bio_en: >-
+  I am a PhD candidate in AI security and privacy at the University of
+  Technology Sydney, advised by Prof. Tianqing Zhu and Prof. Wanlei Zhou. I
+  expect to graduate in 2027.
 
-  My research studies the security risks of fine-tuned language models and memory-augmented agents. I design and evaluate attacks and defences for the LLM supply chain, such as malicious adapters and inference-time attacks. I also work on verifying whether private data was used in training, and on auditing whether machine unlearning really removes the influence of the targeted data.
 
-  Before my PhD, I received a Master's degree in Computer Technology from Hebei University of Technology and a Bachelor's degree in Software Engineering from Hebei University.
-bio_zh: |
+  My research studies the security risks of fine-tuned language models and
+  memory-augmented agents. I design and evaluate attacks and defences for the
+  LLM supply chain, such as malicious adapters and inference-time attacks. I
+  also work on verifying whether private data was used in training, and on
+  auditing whether machine unlearning really removes the influence of the
+  targeted data.
+
+
+  Before my PhD, I received a Master's degree in Computer Technology from Hebei
+  University of Technology and a Bachelor's degree in Software Engineering from
+  Hebei University.
+bio_zh: |-
   我是悉尼科技大学人工智能安全与隐私方向的博士生，导师为朱天清教授和周万雷教授，预计 2027 年毕业。
 
   我的研究关注微调语言模型和记忆增强智能体的安全风险。我设计并评估面向大模型供应链的攻击与防御，例如恶意适配器和推理时攻击；同时研究如何验证私有数据是否被用于训练，以及如何审计机器遗忘是否真正消除了目标数据的影响。
@@ -26,8 +37,6 @@ interests:
     name_zh: 机器遗忘
   - name_en: Privacy auditing
     name_zh: 隐私审计
-email: jiayang.li@uts.edu.au
-google_scholar_url: ""
+email: jiayang.li-3@student.uts.edu.au
 github_username: Jia-Yang-Li
 linkedin_username: jiayang-li-28b4a3298
-orcid_id: ""
