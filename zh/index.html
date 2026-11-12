@@ -1,0 +1,140 @@
+<!DOCTYPE html> <html lang="zh"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 关于 | Jiayang Li </title> <meta name="author" content="Jiayang Li"> <meta name="description" content="Jiayang Li is a PhD candidate in AI security and privacy at the University of Technology Sydney. "> <meta name="keywords" content="Jiayang Li, AI security, LLM security, machine unlearning, privacy, University of Technology Sydney"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%9B%A1%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://jia-yang-li.github.io/zh/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item active"> <a class="nav-link" href="/zh/">关于 <span class="sr-only">(current)</span> </a> </li> <li class="nav-item"> <a class="nav-link" href="/zh/#news">动态</a> </li> <li class="nav-item"> <a class="nav-link" href="/zh/#publications">论文</a> </li> <li class="nav-item "> <a class="nav-link" href="/zh/cv/">简历 </a> </li> <li class="nav-item"> <a class="nav-link" href="/" lang="en" hreflang="en"> <i class="fa-solid fa-language"></i> EN</a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  /* Smaller profile photo on the left, with the biography wrapping around it. */
+  .profile.float-left {
+    width: 36%;
+    max-width: 160px;
+    margin: 0 1rem 0.5rem 0;
+  }
+  @media (min-width: 576px) {
+    .profile.float-left {
+      width: 20%;
+      max-width: none;
+      margin: 0 1.5rem 0.5rem 0;
+    }
+  }
+  .profile figure {
+    margin-bottom: 0.5rem;
+  }
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 0.9rem;
+    font-size: 1.3rem;
+  }
+  .profile-links a {
+    color: var(--global-text-color);
+  }
+  .profile-links a:hover {
+    color: var(--global-theme-color);
+  }
+  .home-interests {
+    margin: 0.5rem 0 0;
+  }
+  .home-interests .interest-tag {
+    display: inline-block;
+    margin: 0 0.4rem 0.4rem 0;
+    padding: 0.1rem 0.7rem;
+    border: 1px solid var(--global-theme-color);
+    border-radius: 999px;
+    color: var(--global-theme-color);
+    font-size: 0.85rem;
+  }
+  .home-section {
+    margin-top: 2rem;
+    scroll-margin-top: 5rem;
+  }
+  .section-icon {
+    margin-right: 0.5rem;
+    color: var(--global-theme-color);
+    font-size: 0.8em;
+  }
+  .home-news th {
+    width: 7.5rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+</style> <div class="post"> <header class="post-header"> <h1 class="post-title"> <span class="font-weight-bold">李佳杨</span> </h1> <p class="desc">人工智能安全与隐私方向博士生，<a href="https://www.uts.edu.au/" rel="external nofollow noopener" target="_blank">悉尼科技大学</a></p> </header> <article> <div class="profile float-left"> <figure> <picture> <source class="responsive-img-srcset" srcset="/assets/img/prof_pic-480.webp 480w,/assets/img/prof_pic-800.webp 800w,/assets/img/prof_pic-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 180px, (min-width: 576px) 20vw, 36vw"> <img src="/assets/img/prof_pic.jpg?v=235eace0b79677d7da6e8e1d584782b0" class="img-fluid z-depth-1 rounded" width="100%" height="auto" alt="Jiayang Li" loading="eager" onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function (n) { n.remove(); });"> </source></picture> </figure> <div class="profile-links"> <a href="mailto:jiayang.li-3@student.uts.edu.au" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a> <a href="https://github.com/Jia-Yang-Li" title="GitHub" aria-label="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a> <a href="https://www.linkedin.com/in/jiayang-li-28b4a3298" title="LinkedIn" aria-label="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </div> </div> <div class="clearfix"> <p>我是悉尼科技大学人工智能安全与隐私方向的博士生，导师为朱天清教授和周万雷教授，预计 2027 年毕业。</p> <p>我的研究关注微调语言模型和记忆增强智能体的安全风险。我设计并评估面向大模型供应链的攻击与防御，例如恶意适配器和推理时攻击；同时研究如何验证私有数据是否被用于训练，以及如何审计机器遗忘是否真正消除了目标数据的影响。</p> <p>读博之前，我在河北工业大学获得计算机技术硕士学位，在河北大学获得软件工程学士学位。</p> <p class="home-interests"> <span class="interest-tag">大模型安全</span> <span class="interest-tag">智能体安全</span> <span class="interest-tag">机器遗忘</span> <span class="interest-tag">隐私审计</span> </p> </div> <h2 class="home-section" id="news"> <i class="fa-solid fa-bullhorn section-icon"></i>动态</h2> <div class="news home-news"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row">2026 年 10 月</th> <td>新预印本上线 arXiv：<em>Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual Use</em>（<a href="https://arxiv.org/abs/2610.04985" rel="external nofollow noopener" target="_blank">arXiv:2610.04985</a>）。 </td> </tr> <tr> <th scope="row">2026 年 6 月</th> <td>新预印本上线 arXiv：<em>Auditing Machine Unlearning: A Systematic Research on Whether Models Truly Forget</em>（<a href="https://arxiv.org/abs/2606.16110" rel="external nofollow noopener" target="_blank">arXiv:2606.16110</a>）。 </td> </tr> <tr> <th scope="row">2025 年 8 月</th> <td>论文 <em>Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning</em> 发表于 <a href="https://www.usenix.org/conference/usenixsecurity25/presentation/ye-duplication" rel="external nofollow noopener" target="_blank">USENIX Security 2025</a>。 </td> </tr> </table> </div> </div> <h2 class="home-section" id="publications"> <i class="fa-solid fa-book-open section-icon"></i>论文</h2> <div class="publications"> <h2 class="bibliography">2026</h2> <ol class="bibliography"> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#00629b"> <a href="https://signalprocessingsociety.org/publications-resources/ieee-transactions-information-forensics-and-security" rel="external nofollow noopener" target="_blank">TIFS</a> </abbr> </div> <div id="li2026pair" class="col-sm-8"> <div class="title">PAIR: Against Inference-time Attacks on Fine-Tuned LLMs via Path-level Inference Randomization</div> <div class="author"> <em>Jiayang Li</em>, Tianqing Zhu, Dayong Ye, Huan Huo, Xin Yu, Shang Wang, and Wanlei Zhou </div> <div class="periodical"> <em>IEEE Transactions on Information Forensics and Security</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> <a href="https://doi.org/10.1109/TIFS.2026.3744609" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">li2026pair</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{PAIR: Against Inference-time Attacks on Fine-Tuned LLMs via Path-level Inference Randomization}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Li, Jiayang and Zhu, Tianqing and Ye, Dayong and Huo, Huan and Yu, Xin and Wang, Shang and Zhou, Wanlei}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{IEEE Transactions on Information Forensics and Security}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2026}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.1109/TIFS.2026.3744609}</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> </div> <div id="li2026agent" class="col-sm-8"> <div class="title">Agent Teaches Agent: Autonomous Teacher Agents Persistently Hijack Memory-Augmented Embodied Agents</div> <div class="author"> <em>Jiayang Li</em>, Tianqing Zhu, Dayong Ye, Huan Huo, and Wanlei Zhou </div> <div class="periodical"> <em>Under review</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> </div> <div id="li2026hijacking" class="col-sm-8"> <div class="title">Hijacking a Trusted LLM in Real-World Quantized Deployments Only Requires a Disguised Adapter</div> <div class="author"> <em>Jiayang Li</em>, Tianqing Zhu, Huan Huo, Heng Xu, Shang Wang, and Wanlei Zhou </div> <div class="periodical"> <em>Under review</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> </div> <div id="li2026protecting" class="col-sm-8"> <div class="title">Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat and a Superposition-Aware Defense</div> <div class="author"> <em>Jiayang Li</em>, Tianqing Zhu, Longxiang Gao, Huajie Chen, Dayong Ye, Shang Wang, Huan Huo, and Wanlei Zhou </div> <div class="periodical"> <em>Under review</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> </div> <div id="li2026verifying" class="col-sm-8"> <div class="title">Verifying Unauthorized Use of Private Datasets in Fine-tuned Models</div> <div class="author"> <em>Jiayang Li</em>, Tianqing Zhu, Huan Huo, Xuhan Zuo, and Wanlei Zhou </div> <div class="periodical"> <em>Under review</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#b31b1b"> <a href="https://arxiv.org/" rel="external nofollow noopener" target="_blank">arXiv</a> </abbr> </div> <div id="wang2026hidden" class="col-sm-8"> <div class="title">Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual Use</div> <div class="author"> Shang Wang, Tianqing Zhu, Huajie Chen, <em>Jiayang Li</em>, Meng Yang, and Bo Liu </div> <div class="periodical"> <em>arXiv preprint arXiv:2610.04985</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> <a href="http://arxiv.org/abs/2610.04985" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a> </div> </div> </div> </li> <li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#b31b1b"> <a href="https://arxiv.org/" rel="external nofollow noopener" target="_blank">arXiv</a> </abbr> </div> <div id="ye2026auditing" class="col-sm-8"> <div class="title">Auditing Machine Unlearning: A Systematic Research on Whether Models Truly Forget</div> <div class="author"> Dayong Ye, Tianqing Zhu, Ruiding Huang, Xinbo Fu, <em>Jiayang Li</em>, Bo Liu, Huan Huo, and Wanlei Zhou </div> <div class="periodical"> <em>arXiv preprint arXiv:2606.16110</em>, 2026 </div> <div class="periodical"> </div> <div class="links"> <a href="http://arxiv.org/abs/2606.16110" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a> </div> </div> </div> </li> </ol> <h2 class="bibliography">2025</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#9f0000"> <a href="https://www.usenix.org/conference/usenixsecurity25" rel="external nofollow noopener" target="_blank">USENIX Sec</a> </abbr> </div> <div id="ye2025data" class="col-sm-8"> <div class="title">Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning</div> <div class="author"> Dayong Ye, Tianqing Zhu, <em>Jiayang Li</em>, Kun Gao, Bo Liu, Leo Yu Zhang, Wanlei Zhou, and Yang Zhang </div> <div class="periodical"> <em>In 34th USENIX Security Symposium (USENIX Security 25)</em>, 2025 </div> <div class="periodical"> </div> <div class="links"> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> <a href="https://www.usenix.org/conference/usenixsecurity25/presentation/ye-duplication" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">HTML</a> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">ye2025data</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Ye, Dayong and Zhu, Tianqing and Li, Jiayang and Gao, Kun and Liu, Bo and Zhang, Leo Yu and Zhou, Wanlei and Zhang, Yang}</span><span class="p">,</span>
+  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{34th USENIX Security Symposium (USENIX Security 25)}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> <h2 class="bibliography">2022</h2> <ol class="bibliography"><li> <div class="row"> <div class="col col-sm-2 abbr"> <abbr class="badge rounded w-100" style="background-color:#555555"> <a href="https://www.frontiersin.org/journals/neuroscience" rel="external nofollow noopener" target="_blank">Front. Neurosci.</a> </abbr> </div> <div id="hao2022exploring" class="col-sm-8"> <div class="title">Exploring high-order correlations with deep-broad learning for autism spectrum disorder diagnosis</div> <div class="author"> Xiaoke Hao, Qijin An, <em>Jiayang Li</em>, Hongjie Min, Yingchun Guo, Ming Yu, and Jing Qin </div> <div class="periodical"> <em>Frontiers in Neuroscience</em>, 2022 </div> <div class="periodical"> </div> <div class="links"> <a href="https://doi.org/10.3389/fnins.2022.1046268" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">DOI</a> <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a> </div> <div class="bibtex hidden"> <figure class="highlight"><pre><code class="language-bibtex" data-lang="bibtex"><span class="nc">@article</span><span class="p">{</span><span class="nl">hao2022exploring</span><span class="p">,</span>
+  <span class="na">title</span> <span class="p">=</span> <span class="s">{Exploring high-order correlations with deep-broad learning for autism spectrum disorder diagnosis}</span><span class="p">,</span>
+  <span class="na">author</span> <span class="p">=</span> <span class="s">{Hao, Xiaoke and An, Qijin and Li, Jiayang and Min, Hongjie and Guo, Yingchun and Yu, Ming and Qin, Jing}</span><span class="p">,</span>
+  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Frontiers in Neuroscience}</span><span class="p">,</span>
+  <span class="na">year</span> <span class="p">=</span> <span class="s">{2022}</span><span class="p">,</span>
+  <span class="na">doi</span> <span class="p">=</span> <span class="s">{10.3389/fnins.2022.1046268}</span>
+<span class="p">}</span></code></pre></figure> </div> </div> </div> </li></ol> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Jiayang Li. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-cv",
+          title: "CV",
+          description: "Education, experience, projects and skills.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-简历",
+          title: "简历",
+          description: "教育背景、工作经历、项目经历与专业技能。",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/zh/cv/";
+          },
+        },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>

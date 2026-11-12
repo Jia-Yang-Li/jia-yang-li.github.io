@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://jia-yang-li.github.io/sitemap.xml
