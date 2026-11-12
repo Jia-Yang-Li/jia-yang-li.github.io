@@ -1,109 +1,71 @@
 items:
-  - title: "PAIR: Against Inference-time Attacks on Fine-Tuned LLMs via Path-level Inference Randomization"
-    authors: Jiayang Li, Tianqing Zhu, Dayong Ye, Huan Huo, Xin Yu, Shang Wang, Wanlei Zhou
+  - title: "PAIR: Against Inference-time Attacks on Fine-Tuned LLMs via Path-level
+      Inference Randomization"
+    authors: Jiayang Li, Tianqing Zhu, Dayong Ye, Huan Huo, Xin Yu, Shang Wang,
+      Wanlei Zhou
     status: published
     type: journal
     venue: IEEE Transactions on Information Forensics and Security
     abbr: TIFS
     year: 2026
     doi: 10.1109/TIFS.2026.3744609
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
-  - title: "Agent Teaches Agent: Autonomous Teacher Agents Persistently Hijack Memory-Augmented Embodied Agents"
+    image: /assets/img/publication_preview/screenshot-2026-11-13-094310.png
+  - title: "Agent Teaches Agent: Autonomous Teacher Agents Persistently Hijack
+      Memory-Augmented Embodied Agents"
     authors: Jiayang Li, Tianqing Zhu, Dayong Ye, Huan Huo, Wanlei Zhou
     status: under_review
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
-  - title: Hijacking a Trusted LLM in Real-World Quantized Deployments Only Requires a Disguised Adapter
+  - title: Hijacking a Trusted LLM in Real-World Quantized Deployments Only Requires
+      a Disguised Adapter
     authors: Jiayang Li, Tianqing Zhu, Huan Huo, Heng Xu, Shang Wang, Wanlei Zhou
     status: under_review
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
-  - title: "Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat and a Superposition-Aware Defense"
-    authors: Jiayang Li, Tianqing Zhu, Longxiang Gao, Huajie Chen, Dayong Ye, Shang Wang, Huan Huo, Wanlei Zhou
+  - title: "Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat
+      and a Superposition-Aware Defense"
+    authors: Jiayang Li, Tianqing Zhu, Longxiang Gao, Huajie Chen, Dayong Ye, Shang
+      Wang, Huan Huo, Wanlei Zhou
     status: under_review
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
   - title: Verifying Unauthorized Use of Private Datasets in Fine-tuned Models
     authors: Jiayang Li, Tianqing Zhu, Huan Huo, Xuhan Zuo, Wanlei Zhou
     status: under_review
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
-  - title: "Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual Use"
+  - title: "Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual
+      Use"
     authors: Shang Wang, Tianqing Zhu, Huajie Chen, Jiayang Li, Meng Yang, Bo Liu
     status: preprint
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
     arxiv: "2610.04985"
-    link: ""
-    code: ""
-    image: ""
-  - title: "Auditing Machine Unlearning: A Systematic Research on Whether Models Truly Forget"
-    authors: Dayong Ye, Tianqing Zhu, Ruiding Huang, Xinbo Fu, Jiayang Li, Bo Liu, Huan Huo, Wanlei Zhou
+  - title: "Auditing Machine Unlearning: A Systematic Research on Whether Models
+      Truly Forget"
+    authors: Dayong Ye, Tianqing Zhu, Ruiding Huang, Xinbo Fu, Jiayang Li, Bo Liu,
+      Huan Huo, Wanlei Zhou
     status: preprint
     type: journal
-    venue: ""
-    abbr: ""
     year: 2026
-    doi: ""
     arxiv: "2606.16110"
-    link: ""
-    code: ""
-    image: ""
-  - title: "Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning"
-    authors: Dayong Ye, Tianqing Zhu, Jiayang Li, Kun Gao, Bo Liu, Leo Yu Zhang, Wanlei Zhou, Yang Zhang
+  - title: "Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine
+      Unlearning"
+    authors: Dayong Ye, Tianqing Zhu, Jiayang Li, Kun Gao, Bo Liu, Leo Yu Zhang,
+      Wanlei Zhou, Yang Zhang
     status: published
     type: conference
     venue: 34th USENIX Security Symposium (USENIX Security 25)
     abbr: USENIX Sec
     year: 2025
-    doi: ""
-    arxiv: ""
     link: https://www.usenix.org/conference/usenixsecurity25/presentation/ye-duplication
-    code: ""
-    image: ""
-  - title: Exploring high-order correlations with deep-broad learning for autism spectrum disorder diagnosis
-    authors: Xiaoke Hao, Qijin An, Jiayang Li, Hongjie Min, Yingchun Guo, Ming Yu, Jing Qin
+  - title: Exploring high-order correlations with deep-broad learning for autism
+      spectrum disorder diagnosis
+    authors: Xiaoke Hao, Qijin An, Jiayang Li, Hongjie Min, Yingchun Guo, Ming Yu,
+      Jing Qin
     status: published
     type: journal
     venue: Frontiers in Neuroscience
     abbr: Front. Neurosci.
     year: 2022
     doi: 10.3389/fnins.2022.1046268
-    arxiv: ""
-    link: ""
-    code: ""
-    image: ""
