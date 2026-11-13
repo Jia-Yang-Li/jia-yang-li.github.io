@@ -22,6 +22,8 @@ items:
     status: under_review
     type: journal
     year: 2026
+    arxiv: "2611.14978"
+    image: /assets/img/publication_preview/quantization.png
   - title: "Protecting Sensitive Knowledge Under LLM Unlearning: The Proxy Threat
       and a Superposition-Aware Defense"
     authors: Jiayang Li, Tianqing Zhu, Longxiang Gao, Huajie Chen, Dayong Ye, Shang
@@ -29,6 +31,8 @@ items:
     status: under_review
     type: journal
     year: 2026
+    arxiv: "2611.15013"
+    image: /assets/img/publication_preview/2026-11-13-212423.png
   - title: Verifying Unauthorized Use of Private Datasets in Fine-tuned Models
     authors: Jiayang Li, Tianqing Zhu, Huan Huo, Xuhan Zuo, Wanlei Zhou
     status: under_review
