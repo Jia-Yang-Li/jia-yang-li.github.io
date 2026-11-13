@@ -1,10 +1,29 @@
 items:
   - date: 2026-10-01
-    text_en: "New preprint on arXiv: *Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual Use* ([arXiv:2610.04985](https://arxiv.org/abs/2610.04985))."
-    text_zh: "新预印本上线 arXiv：*Hidden Risks of Jev: An Empirical Study of Security, Privacy, and Dual Use*（[arXiv:2610.04985](https://arxiv.org/abs/2610.04985)）。"
+    text_en: "New preprint on arXiv: *Hidden Risks of Jev: An Empirical Study of
+      Security, Privacy, and Dual Use*
+      ([arXiv:2610.04985](https://arxiv.org/abs/2610.04985))."
+    text_zh: "新预印本上线 arXiv：*Hidden Risks of Jev: An Empirical Study of Security,
+      Privacy, and Dual
+      Use*（[arXiv:2610.04985](https://arxiv.org/abs/2610.04985)）。"
   - date: 2026-06-01
-    text_en: "New preprint on arXiv: *Auditing Machine Unlearning: A Systematic Research on Whether Models Truly Forget* ([arXiv:2606.16110](https://arxiv.org/abs/2606.16110))."
-    text_zh: "新预印本上线 arXiv：*Auditing Machine Unlearning: A Systematic Research on Whether Models Truly Forget*（[arXiv:2606.16110](https://arxiv.org/abs/2606.16110)）。"
-  - date: 2025-08-01
-    text_en: "Our paper *Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning* appeared at [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/ye-duplication)."
-    text_zh: "论文 *Data Duplication: A Novel Multi-Purpose Attack Paradigm in Machine Unlearning* 发表于 [USENIX Security 2025](https://www.usenix.org/conference/usenixsecurity25/presentation/ye-duplication)。"
+    text_en: "New preprint on arXiv: *Auditing Machine Unlearning: A Systematic
+      Research on Whether Models Truly Forget*
+      ([arXiv:2606.16110](https://arxiv.org/abs/2606.16110))."
+    text_zh: "新预印本上线 arXiv：*Auditing Machine Unlearning: A Systematic Research on
+      Whether Models Truly
+      Forget*（[arXiv:2606.16110](https://arxiv.org/abs/2606.16110)）。"
+  - date: 2026-11-11
+    text_en: "New preprint on arXiv: *Protecting Sensitive Knowledge Under LLM
+      Unlearning: The Proxy Threat and a Superposition-Aware Defense*
+      ([arXiv:2611.15013](https://arxiv.org/abs/2611.15013))"
+    text_zh: "新预印本上线 arXiv：*Protecting Sensitive Knowledge Under LLM Unlearning: The
+      Proxy Threat and a Superposition-Aware Defense*
+      ([arXiv:2611.15013](https://arxiv.org/abs/2611.15013))"
+  - date: 2026-11-11
+    text_en: "New preprint on arXiv: *Hijacking a Trusted LLM in Real-World
+      Quantized Deployments Only Requires a Disguised Adapter*
+      ([arXiv:2611.14978](https://arxiv.org/abs/2611.14978))"
+    text_zh: 新预印本上线 arXiv：*Hijacking a Trusted LLM in Real-World Quantized
+      Deployments Only Requires a Disguised Adapter*
+      ([arXiv:2611.14978](https://arxiv.org/abs/2611.14978))
